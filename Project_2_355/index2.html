@@ -13,15 +13,15 @@
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="index3.html">Products</a>
+        <a href="index4.html">Contact</a>
     </nav>
 
     <section>
         <h2>Featured Sales</h2>
         <div class="sale-item">
-            <img src="couch.jpg" alt="Product 1" width="300" height==200>
+            <img src="couch.jpg" alt="Product 1" width="300" height="200">
             <h3>Ceni Volcanic Gray Sofa</h3>
             <p>50% off - Limited Time Offer!!!</p>
         </div>
@@ -36,5 +36,14 @@
             <p>15% Off!!!</p>
         </div>
     </section>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>This is a special offer just for you! Click OK to reveal the deal.</p>
+            <button onclick="revealDeal()">OK</button>
+        </div>
+    </div>
+    <script src="script2.js" defer></script>
 </body>
 </html>
