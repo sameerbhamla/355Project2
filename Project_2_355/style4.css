@@ -37,3 +37,44 @@ section {
   padding: 20px;
   text-align: center;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-form-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10%;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.contact-form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-form-inputs input {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.contact-form-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
