@@ -32,3 +32,8 @@ nav a:hover {
   background-color: #ddd;
   color: black;
 }
+
+section {
+  padding: 20px;
+  text-align: center;
+}
