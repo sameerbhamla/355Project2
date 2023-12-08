@@ -98,6 +98,23 @@ body {
     align-items: center;
     width: 100%;
   }
+  .contact-form-submit {
+    text-align: center; 
+  }
+
+  .contact-form-submit input[type="submit"] {
+    padding: 15px 20px; 
+    font-size: 16px; 
+    background-color: #3498db; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+
+  .contact-form-submit input[type="submit"]:hover {
+    background-color: #2980b9; 
+  }
 
   footer{
     background:  #a5a5a5;
