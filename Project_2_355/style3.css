@@ -83,6 +83,11 @@ footer div{
   transition: background-color 0.3s;
 }
 
+footer div a {
+  color: #fff;
+  text-decoration: none;
+}
+
 footer div a:hover {
   background-color: #ddd;
   color: black;

@@ -140,4 +140,13 @@ body {
     background-color: #555;
   }
   
+  footer div a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer div a:hover {
+    background-color: #ddd;
+    color: black;
+}
 
