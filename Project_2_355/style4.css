@@ -20,6 +20,10 @@ body {
     overflow: hidden;
   }
   
+  section{
+    font-size: x-large
+  }
+  
   nav a {
     float: left;
     display: block;
@@ -72,8 +76,22 @@ body {
   .contact-form-inputs input {
     width: 90%;
     margin-bottom: 10px;
+    
   }
   
+  .contact-form-inputs {
+    max-width: 300px; 
+    margin: 0 auto; 
+  }
+
+  .contact-form-inputs input,
+  .contact-form-inputs textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    box-sizing: border-box; 
+  }
+
   .contact-form-submit {
     display: flex;
     flex-direction: column;
