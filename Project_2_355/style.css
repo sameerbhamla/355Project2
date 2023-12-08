@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  background-image: url("https://www.transparenttextures.com/patterns/hexellence.png");
   color: #333;
 }
 
@@ -33,6 +34,12 @@ nav a:hover {
   color: black;
 }
 
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+
 footer{
   background:  #a5a5a5;
   color: rgb(255, 255, 255);
@@ -51,6 +58,11 @@ footer div{
   padding: 20px;
   text-decoration: none;
   transition: background-color 0.3s;
+}
+
+footer div a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 footer div a:hover {
