@@ -17,6 +17,7 @@ function createLightbox() {
     let lightbox = document.getElementById('lightbox');
 
     let lbTitle = document.createElement('h1'); // Fix the tag name
+    let lbNav = document.createElement('div');
     let lbCounter = document.createElement('div');
     let lbPrev = document.createElement('div');
     let lbNext = document.createElement('div');
@@ -27,21 +28,24 @@ function createLightbox() {
     lbTitle.id = 'lbTitle';
     lbTitle.textContent = lightboxTitle;
 
-    lightbox.appendChild(lbCounter);
+    lightbox.appendChild(lbNav);
+    lbNav.id = 'lbNav';
+
+    lbNav.appendChild(lbCounter);
     lbCounter.id = 'lbCounter';
     lbCounter.textContent = currentImg + ' / ' + imgCount;
 
-    lightbox.appendChild(lbPrev);
+    lbNav.appendChild(lbPrev);
     lbPrev.id = 'lbPrev';
     lbPrev.innerHTML = '&#9664';
     lbPrev.onclick = showPrev;
 
-    lightbox.appendChild(lbNext);
+    lbNav.appendChild(lbNext);
     lbNext.id = 'lbNext';
     lbNext.innerHTML = '&#9654';
     lbNext.onclick = showNext;
 
-    lightbox.appendChild(lbPlay);
+    lbNav.appendChild(lbPlay);
     lbPlay.id = 'lbPlay';
     lbPlay.innerHTML = '&#9199';
     let timeId;

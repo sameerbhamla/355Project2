@@ -1,12 +1,51 @@
 #lightbox {
     display: flex;
-    flex-wrap: wrap; /* Ensure images wrap to the next line if they don't fit */
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 #lightbox img {
-    width: 200px; /* Set your desired width */
-    height: 150px; /* Set your desired height */
-    object-fit: cover; /* Preserve aspect ratio and cover the container */
-    margin: 5px; /* Add some margin between images if needed */
-    border: 1px solid #ddd; /* Add a border for better visibility */
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+    border: 1px solid #ddd; 
+}
+
+#lbTitle {
+    font-size: 24px;
+    margin: 10px;
+}
+
+#lbNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lbCounter {
+  font-size: 24px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+#lbPrev,
+#lbNext,
+#lbPlay {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#lbPrev:hover,
+#lbNext:hover,
+#lbPlay:hover {
+    color: #ff6347;
+}
+
+#lbImages {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
 }
