@@ -1,9 +1,34 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const db = require('./db');
 
 const app = express();
 
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.post('/submit', (req, res) => {
+  const { ticketNumber, name, email, message } = req.body;
+
+  db.run('INSERT INTO contacts (ticketNumber, name, email, message) VALUES (?, ?, ?, ?)', [ticketNumber,name, email, message], (err) => {
+    if (err) {
+      console.error(err.message);
+      return res.status(500).send('Error submitting the form');
+    }
+
+    console.log('Data inserted into the database:', { ticketNumber, name, email, message });
+
+    res.send('Form submitted successfully!');
+  });
+
+  db.all('SELECT * FROM contacts', (err, rows) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Data in the contacts table:', rows);
+  });
+});
 
 app.use((req, res, next) => {
     res.status(404).send(`

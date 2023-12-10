@@ -4,9 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
   
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault(); 
-      const ticketNumber = generateRandomTicketNumber();
 
-      displaySubmissionFeedback(ticketNumber);
+      const ticketNumber = generateRandomTicketNumber();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "/submit", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          displaySubmissionFeedback(ticketNumber);
+        }
+      };
+      const formData = JSON.stringify({ ticketNumber, name, email, message });
+      xhr.send(formData);
     });
   
     function generateRandomTicketNumber() {
