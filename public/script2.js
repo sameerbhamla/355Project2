@@ -1,15 +1,23 @@
-const modal = document.getElementById('myModal');
+document.addEventListener("DOMContentLoaded", async function() {
+    const modal = document.getElementById('myModal');
 
-        // Delay the modal by 10 seconds
-        setTimeout(function() {
-            modal.style.display = 'block';
-        }, 10000);
+    // Asynchronous delay using async/await
+    async function delay(ms) {
+        return new Promise(resolve => {
+            setTimeout(resolve, ms);
+        });
+    }
 
-        function closeModal() {
-            modal.style.display = 'none';
-        }
+    // Delay the modal by 10 seconds
+    await delay(10000);
+    modal.style.display = 'block';
 
-        function revealDeal() {
-            alert('Special Deal: 10% Off on your next purchase!');
-            closeModal();
-        }
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    function revealDeal() {
+        alert('Special Deal: 10% Off on your next purchase!');
+        closeModal();
+    }
+});

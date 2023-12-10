@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     const creativeMessages = [
         "Uncover hidden treasures!",
         "Jaw-dropping discounts await you!",
@@ -17,17 +17,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function generatePromotions() {
-        const promotions = [
-            "Limited-time offer: Free shipping on all orders!",
-            "Buy one, get one free on selected items!",
-            "Flash sale: Up to 50% off on clearance items!",
-            "Exclusive discounts for newsletter subscribers!"
-        ];
+        return new Promise(resolve => {
+            const promotions = [
+                "Limited-time offer: Free shipping on all orders!",
+                "Buy one, get one free on selected items!",
+                "Flash sale: Up to 50% off on clearance items!",
+                "Exclusive discounts for newsletter subscribers!"
+            ];
 
-        promotions.forEach(promotion => {
-            const promotionItem = document.createElement("div");
-            promotionItem.textContent = promotion;
-            promotionsContainer.appendChild(promotionItem);
+            promotions.forEach(promotion => {
+                const promotionItem = document.createElement("div");
+                promotionItem.textContent = promotion;
+                promotionsContainer.appendChild(promotionItem);
+            });
+
+            // Simulating an asynchronous delay
+            setTimeout(() => {
+                resolve();
+            }, 1000);
         });
     }
 
@@ -45,9 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    await generatePromotions(); // Wait for promotions to be generated
+
     setInterval(changeDynamicMessage, 5000);
     changeDynamicMessage();
 
-    generatePromotions();
     generateTestimonials();
 });
